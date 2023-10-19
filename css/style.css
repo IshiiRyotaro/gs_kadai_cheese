@@ -1,0 +1,684 @@
+/* ここから下に記載していく */
+
+html {
+    font-size: 100%;
+    /*　設定した文字サイズを正しく反映させる */
+}
+
+* {
+    box-sizing: border-box;
+    /* 余白や線を幅や高さに含める */
+}
+
+span {
+    display: inline-block;
+}
+
+img {
+    max-width: 100%;
+    /* 画像のはみ出しを防ぐ */
+    height: auto;
+}
+
+.wrap {
+    width: 1200px;
+    /* サイト全体の横幅 */
+    background-color: white;
+    /* ページ全体の色 */
+    margin: auto;
+    /* bodyを中央寄せにするためにautoを選択 */
+}
+
+header {
+    width: 100%;
+    height: 121px;
+    /* 課題指定のpxの和 上50px フォント21px 下50px */
+    background-color: white;
+    /* 境界が分かりやすいように色あり */
+    padding: 0 2%;
+    /* ページの左右2%を余白にする */
+    display: flex;
+    /* ロゴとULを横に並べる */
+    align-items: center;
+    /* 垂直方向の位置を中央揃えに */
+
+
+}
+
+nav {
+    margin: auto;
+    /* ナビを右寄せにしてくれている？ */
+}
+
+ul {
+    display: flex;
+    /* リスト項目を横並びに */
+    list-style: none;
+    /* リストの黒点をとる */
+}
+
+li {
+    margin-left: 50px;
+    /* リストの項目間のpx */
+}
+
+a {
+    text-decoration: none;
+    /* テキストの下線を消す */
+    color: black;
+    font-size: 21px;
+    /* 指定フォントサイズ */
+}
+
+.main {
+
+    width: 100%;
+    height: 446px;
+    /* メイン画像の大きさ指定 */
+    position: relative;
+}
+
+.center {
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 30px;
+}
+
+.center2 {
+    position: absolute;
+    bottom: 180px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 26px;
+    color: white;
+}
+
+.ABOUT {
+    text-align: center;
+    /* テキストを中央に */
+    padding: 60px 0 30px;
+    /* 上下の余白を規定の値に */
+    font-size: 24px;
+    /* フォントサイズを規定の値に */
+    color: #ffd61a;
+    /* 色を規定の値に */
+}
+
+.tsuite {
+    text-align: center;
+    /* テキストを中央に */
+    padding: 0px 0px 60px;
+    font-size: 18px;
+    color: #222222;
+}
+
+.bun1 {
+    text-align: center;
+    padding: 0 0 30px;
+    font-size: 16px;
+    color: #222222;
+}
+
+.bun2 {
+    text-align: center;
+    padding: 0 0 40px;
+    font-size: 16px;
+    color: #222222;
+    line-height: normal;
+    /* 改行した時の行間サイズ */
+}
+
+.bun3 {
+    text-align: center;
+    padding: 0 0 40px;
+    font-size: 16px;
+    color: #222222;
+}
+
+.bun4 {
+    text-align: center;
+    padding: 0 0 10px;
+    font-size: 16px;
+    color: #222222;
+}
+
+.bun5 {
+    text-align: center;
+    padding: 0 0 80px;
+    font-size: 16px;
+    color: #222222;
+}
+
+.yonn {
+    object-fit: cover;
+    justify-content: center;
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+}
+.yon{
+    width: 22%;
+}
+.san{
+    width: 28%;
+}
+.ni{
+    width: 28%;
+}
+.ichi{
+    width: 22%;
+}
+
+.COURSE {
+    text-align: center;
+    padding: 60px 0 30px;
+    font-size: 24px;
+    color: #222222;
+}
+
+.bun6 {
+    text-align: center;
+    padding: 0 0 10px;
+    font-size: 16px;
+    color: #222222;
+}
+
+.bun7 {
+    text-align: center;
+    padding: 0 0 60px;
+    font-size: 16px;
+    color: #222222;
+}
+
+/* itimaime */
+.box1 {
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    width: 1200px;
+    height: 430px;
+}
+
+h3 {
+    font-size: 20px;
+    width: 450px;
+    padding: 100px 120px 40px 50px;
+}
+
+.p1 {
+    padding: 0 120px 0 50px;
+    font-size: 16px;
+    text-align: left;
+}
+
+
+.text1 {
+    position: relative;
+    text-align: center;
+    width: 50%;
+    line-height: normal;
+}
+
+.yoko1 {
+    width: 50%;
+    margin-left: 0%;
+}
+
+.yoko1 img {
+    width: 100%;
+    height: 100%;
+}
+
+/* nimaime */
+.box2 {
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: reverse;
+    justify-content: center;
+    width: 1200px;
+    height: 430px;
+}
+
+h4 {
+    font-size: 20px;
+    width: 450px;
+    padding: 100px 50px 40px 120px;
+}
+
+.p2 {
+    padding: 0 50px 0 120px;
+    font-size: 16px;
+    text-align: left;
+}
+
+
+.text2 {
+    position: relative;
+    text-align: center;
+    width: 50%;
+    line-height: normal;
+}
+
+.yoko2 {
+    width: 50%;
+    margin-left: 0%;
+}
+
+.yoko2 img {
+    width: 100%;
+    height: 100%;
+}
+
+/* sanmaime */
+.box3 {
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    width: 1200px;
+    height: 430px;
+}
+
+h5 {
+    font-size: 20px;
+    width: 450px;
+    padding: 100px 80px 40px 50px;
+}
+
+.p3 {
+    padding: 0 110px 0 50px;
+    font-size: 16px;
+    text-align: left;
+}
+
+
+.text3 {
+    position: relative;
+    text-align: center;
+    width: 50%;
+    line-height: normal;
+}
+
+.yoko3 {
+    width: 50%;
+    margin-left: 0%;
+}
+
+.yoko3 img {
+    width: 100%;
+    height: 100%;
+}
+
+.NEWS {
+    text-align: center;
+    padding: 60px 0 30px;
+    font-size: 24px;
+    color: #ffd61a;
+}
+
+.bun8 {
+    text-align: center;
+    padding: 0 0 60px;
+    font-size: 18px;
+}
+
+/* NEWSBOXここから */
+.NEWSBOX {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* TOPICBOX1ここから */
+.topicbox1 {
+    width: 300px;
+    margin-right: 30px;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.25);
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.topicbox1:hover {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+    transform: translateY(-0.2em);
+}
+
+.pizza1 {
+    width: 300px;
+}
+
+.NEWStxt1 {
+    font-size: 14px;
+}
+
+.NEWShiduke1 {
+    margin: 30px 0 24px;
+}
+
+.NEWSbun11 {
+    margin-bottom: 10px;
+}
+
+.NEWSbun12 {
+    margin-bottom: 10px;
+}
+
+.NEWSbun13 {
+    margin-bottom: 10px;
+}
+
+/* TOPICBOX1ここまで */
+/* TOPICBOX2ここから */
+.topicbox2 {
+    width: 300px;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.25);
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.topicbox2:hover {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+    transform: translateY(-0.2em);
+}
+
+.pizza2 {
+    width: 300px;
+}
+
+.NEWStxt2 {
+    font-size: 14px;
+}
+
+.NEWShiduke2 {
+    margin: 30px 0 24px;
+}
+
+.NEWSbun21 {
+    margin-bottom: 10px;
+}
+
+.NEWSbun22 {
+    margin-bottom: 10px;
+}
+
+.NEWSbun23 {
+    margin-bottom: 10px;
+}
+
+/* TOPICBOX2ここまで */
+/* TOPICBOX3ここから */
+.topicbox3 {
+    width: 300px;
+    margin-left: 30px;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.25);
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.topicbox3:hover {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+    transform: translateY(-0.2em);
+}
+
+.pizza3 {
+    width: 300px;
+}
+
+.NEWStxt3 {
+    font-size: 14px;
+}
+
+.NEWShiduke3 {
+    margin: 30px 0 24px;
+}
+
+.NEWSbun31 {
+    margin-bottom: 10px;
+}
+
+.NEWSbun32 {
+    margin-bottom: 10px;
+}
+
+.NEWSbun33 {
+    margin-bottom: 10px;
+}
+
+/* TOPICBOX3ここまで */
+/* NEWSboxここまで */
+
+/* MOREBOXここから */
+.morebox {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto 60px;
+    width: 300px;
+    height: 60px;
+    background-color: #ffd61a;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.morebox:hover {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+    transform: translateY(-0.2em);
+}
+
+.more {
+    font-size: 18px;
+    color: #fafafa;
+    margin: auto;
+}
+
+/* MOREBOX終わり */
+/* ACCESSはじめ */
+.access {
+    width: 100%;
+    height: auto;
+    background-color: #fafafa;
+    padding: 60px 0 60px;
+}
+
+.ACCESS {
+    text-align: center;
+    font-size: 24px;
+    margin: 0 0 30px;
+}
+
+.kaisya {
+    text-align: center;
+    font-size: 18px;
+    margin: 30px 0 60px;
+}
+
+/* 地図はじめ */
+.gmap {
+    height: 100%;
+    width: 100%;
+}
+
+.map {
+    width: 100%;
+}
+
+/* 地図終わり */
+/* テーブルはじめ */
+.table1 {
+    font-size: 16px;
+    width: 100%;
+    border: 0px;
+    line-height: 30px;
+    background-color: #fafafa;
+    padding-left: 450px;
+    padding-bottom: 30px;
+}
+
+.table1 th {
+    text-align: left;
+    width: 20%;
+    padding-bottom: 30px;
+}
+
+.table1 td {
+    width: 80%;
+    padding-left: 70px;
+    padding-bottom: 30px;
+}
+
+/* テーブル終わり */
+/* コンタクトはじめ */
+.conta {
+    text-align: center;
+}
+
+.cont {
+    font-size: 24px;
+    margin: 60px 0 30px;
+}
+
+.setsu {
+    font-size: 16px;
+    margin: 0 0 60px;
+}
+
+.zehi {
+    font-size: 16px;
+    margin: 0 0 10px;
+}
+
+.sonota {
+    font-size: 16px;
+    margin: 0 0 30px;
+}
+
+.kome {
+    font-size: 16px;
+    margin: 0 0 10px;
+}
+
+.machi {
+    font-size: 16px;
+    margin: 0 0 70px;
+}
+
+/* コンタクト文章終わり */
+.contactlist {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}
+
+
+/* チェックボックスデザイン */
+.contactlist table {
+    border-collapse: collapse;
+    width: 640px;
+    margin-bottom: 30px;
+
+}
+
+.contactlist th {
+    padding: 0 64px 8px 16px;
+    height: 16px;
+    width: 240px;
+    font-size: 14px;
+    text-align: left;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.contactlist td {
+    padding: 8px 8px;
+    width: 400px;
+    text-align: left;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.tt {
+    width: 328px;
+    height: 36px;
+    border-bottom: 1px solid #bfbfbf
+}
+
+.ttt {
+    width: 328px;
+    height: 36px;
+    border-bottom: 1px solid #bfbfbf
+}
+
+.tttt {
+    width: 328px;
+    height: 36px;
+    border-bottom: 1px solid #bfbfbf
+}
+
+.kikkake {
+    width: 328px;
+    height: 36px;
+    border-bottom: 1px solid #bfbfbf
+}
+
+.senntaku {
+    width: 400px;
+}
+
+.senntaku div {
+    padding-bottom: 24px;
+
+}
+
+.senntaku label {
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.sai {
+    width: 328px;
+    height: 150px;
+    border-bottom: 1px solid #bfbfbf
+}
+
+/* コンタクト終わり */
+
+.soushinbox {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 140px;
+    width: 300px;
+    height: 60px;
+    background-color: #ffd61a;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.soushinbox:hover {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+    transform: translateY(-0.2em);
+}
+
+.soushin {
+    font-size: 18px;
+    color: #fafafa;
+    margin: auto;
+}
+
+.footer {
+    display: flex;
+    background-color: #707070;
+    height: 76px;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: white;
+}

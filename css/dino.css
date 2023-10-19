@@ -1,0 +1,978 @@
+/* 全体向けのcss */
+@import url(https://fonts.googleapis.com/css?family=Creepster);
+@import url(https://fonts.googleapis.com/css?family=Noto+Serif+JP);
+@keyframes shake {
+    0% {    transform: translateX(0);
+    }
+    40% {   transform: translateX(-2%);
+    }
+    80% {   transform: translateX(2%);
+    }
+    100% {  transform: translateX(0);
+    }
+}
+/* 導入 */
+html {
+    font-size: 100%;
+    /* フォントサイズを指定のサイズで表示させる */
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    /* 余白や線を幅や高さに含める */
+}
+
+img {
+    max-width: 100%;
+    /* 画像のはみ出しを防ぐ */
+    height: auto;
+}
+
+.bg {
+    background-color: rgba(255, 255, 255, 0.8);
+    background-blend-mode: lighten;
+}
+
+.wrap {
+    width: 1280px;
+    /* サイト全体の横幅 */
+    background-color: rgb(255, 246, 233);
+    /* ページ全体の色 */
+    margin: auto;
+    /* 中央寄せにするためにautoを選択 */
+}
+
+.backimg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+}
+
+/* ヘッダーをいじる */
+header {
+    width: 100%;
+    /* ヘッダーの幅 */
+    align-items: center;
+    /* 垂直方向の位置を中央揃えに */
+    background-color: bisque;
+}
+/* ハンバーガーメニュー */
+.menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: rgb(245, 126, 29);
+    border-radius: 20px;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: bisque;
+    position: absolute;
+}
+.menu-btn span:before {
+    bottom: 8px;
+}
+.menu-btn span:after {
+    top: 8px;
+}
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+#menu-btn-check {
+    display: none;
+}
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 80;
+    background-color: rgb(245, 126, 29);
+    border-radius: 20px;
+}
+.menu-content ul {
+    padding: 70px 10px 0;
+}
+.menu-content ul li {
+    border-bottom: solid 2px orange;
+    list-style: none;
+}
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 28px;
+    font-family: 'Creepster', cursive;
+    box-sizing: border-box;
+    color:rgb(245, 126, 29);
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+}
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 3px orange;
+    border-right: solid 3px  orange;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
+}
+.menu-content {
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;/*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    background-color: bisque;
+    transition: all 1.5s;/*アニメーション設定*/
+}
+#menu-btn-check:checked ~ .menu-content {
+    left: 0;/*メニューを画面内へ*/
+}
+/* ハンバーガーメニュー */
+/* ロゴ画像をいじる */
+.header_logo {
+    width: 100%;
+    height: 150px;
+    /* ロゴそのもののサイズをヘッダーサイズに合わせる */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* 画像を中央に */
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: block;
+    /* ブロック要素にする */
+    margin: 0 auto;
+    /* 要素中央揃え */
+    position: relative;
+    /* 位置指定 */
+    animation: anime1 2s ease;
+    /* アニメーション指定 */
+}
+
+.logos {
+    margin: 0 400px;
+    width: 40%;
+    height: 100%;
+}
+
+@keyframes anime1 {
+    0% {
+        opacity: 0;
+        /* 透明度指定 */
+        top: 40px;
+        /* 位置指定 */
+    }
+
+    100% {
+        opacity: 1;
+        /* 透明度指定 */
+        top: 0;
+        /* 位置指定 */
+    }
+}
+
+/* ナビのブロックをいじる */
+.sticky1 {
+    position: sticky;
+    top: 0px;
+
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    /* ナビの箱を中央に */
+    background-color: #fbc99a;
+    border: 8px double orange;
+}
+
+/* ナビのリストいじる */
+.dnav {
+    display: flex;
+    /* 項目を横並びに */
+    justify-content: center;
+    /* 項目を中央に */
+    list-style: none;
+    /* リストの黒点をとる */
+}
+
+.dnav li {
+    margin: 25px 40px;
+    /* 項目の上下に15,左右に30pxの余白 */
+    font-family: 'Creepster', cursive;
+    font-size: 28px;
+    animation: shake .5s linear infinite;
+}
+
+a {
+    text-decoration: none;
+    /* テキストの下線を消す */
+    color: rgb(245, 126, 29);
+}
+
+/* メイン画像 */
+.main {
+    width: 100%;
+    height: 600px;
+    position: relative;
+}
+
+/* メインテキスト */
+.maintex1 {
+    position: absolute;
+    top: 450px;
+    left: 22%;
+    transform: translate(-50% -50%);
+    font-size: 45px;
+    color: antiquewhite;
+    text-shadow: 4px 4px 4px black, -4px -4px 4px rgb(245, 126, 29),
+        -4px 4px 4px rgb(245, 126, 29), 4px -4px 4px rgb(245, 126, 29),
+        4px 0 4px rgb(245, 126, 29), -4px 0 4px rgb(245, 126, 29),
+        0 4px 4px rgb(245, 126, 29), 0 -4px 4px rgb(245, 126, 29);
+    font-family: 'Noto Serif JP', sans-serif;
+}
+
+.maintex2 {
+    position: absolute;
+    top: 600px;
+    right: 21%;
+    transform: translate(-50% -50%);
+    font-size: 45px;
+    color: antiquewhite;
+    text-shadow: 4px 4px 4px black, -4px -4px 4px rgb(245, 126, 29),
+        -4px 4px 4px rgb(245, 126, 29), 4px -4px 4px rgb(245, 126, 29),
+        4px 0 4px rgb(245, 126, 29), -4px 0 4px rgb(245, 126, 29),
+        0 4px 4px rgb(245, 126, 29), 0 -4px 4px rgb(245, 126, 29);
+    font-family: 'Noto Serif JP', sans-serif;
+}
+
+/* ABOUT */
+.ABOUToya {
+    padding-top: 60px;
+}
+
+.AABOUT {
+    text-align: center;
+    margin: 0 0 48px;
+    padding: 15px 0;
+    font-family: 'Creepster', cursive;
+    font-size: 40px;
+    color: rgb(245, 126, 29);
+    background-color: #fbc99a;
+    border: 8px double orange;
+}
+
+.tex1 {
+    text-align: center;
+    font-family: 'Noto Serif JP', sans-serif;
+}
+
+.Atex1 {
+    font-size: 27px;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 4px 4px 4px black, -4px -4px 4px black,
+        -4px 4px 4px black, 4px -4px 4px black,
+        4px 0 4px black, -4px 0 4px black,
+        0 4px 4px black, 0 -4px 4px black;
+}
+
+.Atex2 {
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.Atex3 {
+    font-size: 27px;
+    padding-bottom: 50px;
+}
+
+.gakko {
+    font-size: 35px;
+    color: white;
+    text-shadow: 4px 4px 4px black, -4px -4px 4px rgb(245, 126, 29),
+        -4px 4px 4px rgb(245, 126, 29), 4px -4px 4px rgb(245, 126, 29),
+        4px 0 4px rgb(245, 126, 29), -4px 0 4px rgb(245, 126, 29),
+        0 4px 4px rgb(245, 126, 29), 0 -4px 4px rgb(245, 126, 29);
+}
+
+.pic1 {
+    width: 425px;
+    height: 300px;
+}
+
+.wrapper {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.con {
+    display: inline-block;
+}
+
+.float {
+    transition: transform 0.2s ease 0s;
+}
+
+.float:hover {
+    transform: translate(0, -10%);
+}
+
+.pic2 {
+    width: 430px;
+    height: 300px;
+}
+
+.pic3 {
+    width: 425px;
+    height: 300px;
+}
+
+.pic4 {
+    width: 425px;
+    height: 300px;
+}
+
+.CCURRICULUM {
+    text-align: center;
+    margin: 30px 0 30px;
+    padding: 15px 0;
+    font-family: 'Creepster', cursive;
+    font-size: 40px;
+    color: rgb(245, 126, 29);
+    background-color: #fbc99a;
+    border: 8px double orange;
+}
+
+.Ctex {
+    display: flex;
+    height: 400px;
+    flex-wrap: wrap-reverse;
+
+}
+
+.ctex {
+    display: flex;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Cpic {
+    width: 100%;
+}
+
+.cpic {
+    height: 400px;
+}
+
+
+.ctex {
+    background-color: bisque;
+    width: 44%;
+    font-size: 27px;
+    line-height: 1.5;
+    text-align: center;
+    padding-top: 40px;
+    padding-left: 70px;
+    padding-right: 40px;
+    padding-bottom: 60px;
+    margin: 0 3%;
+    letter-spacing: 0.25em;
+    font-size: 20px;
+    font-family: 'Noto Serif JP', sans-serif;
+    color: black;
+    text-shadow: 2px 2px 3px white, -2px -2px 3px white,
+        -2px -2px 3px white, -2px -2px 3px white,
+        -2px -2px 3px white, -2px -2px 3px white,
+        -2px -2px 3px white, -2px -2px 3px white,
+}
+
+.EEMPLOYMENT {
+    text-align: center;
+    font-family: 'Creepster', cursive;
+    font-size: 40px;
+    color: rgb(245, 126, 29);
+    margin-top: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #fbc99a;
+    border: 8px double orange;
+}
+
+.EMPtexbox {
+    display: flex;
+}
+
+.mezasu {
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Noto Serif JP', sans-serif;
+    color: black;
+    padding: 50px 0;
+}
+
+.syotoutex {
+    width: 40%;
+    height: AUTO;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.25em;
+    font-size: 20px;
+    padding: 30px;
+    margin: 0 5%;
+    font-family: 'Noto Serif JP', sans-serif;
+    background-color: bisque;
+}
+
+.syotoutex2 {
+    width: 40%;
+    height: AUTO;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.25em;
+    font-size: 20px;
+    padding: 30px;
+    margin: 0 5%;
+    font-family: 'Noto Serif JP', sans-serif;
+    background-color: bisque;
+}
+
+.wrap1 {
+    position: relative;
+}
+
+.mezasipic1 {
+    width: 640px;
+    height: 440px;
+    padding: 10px 0;
+}
+
+.description1 {
+    opacity: 0.8;
+    /*透明度を設定*/
+    box-sizing: border-box;
+    color: #fff;
+    background: #000;
+    width: 480px;
+    height: auto;
+    padding: 1em;
+    position: absolute;
+    bottom: 1px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.rightbox {
+    position: relative;
+}
+
+.wrap2 {
+    position: relative;
+}
+
+.mezasipic2 {
+    width: 400px;
+    height: 260px;
+}
+
+.description2 {
+    opacity: 0.7;
+    /*透明度を設定*/
+    box-sizing: border-box;
+    color: #fff;
+    background: #000;
+    width: 240px;
+    height: 64px;
+    padding: 1em;
+    position: absolute;
+    bottom: 1px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.wrap3 {
+    position: relative;
+}
+
+.mezasipic3 {
+    position: absolute;
+    top: -50px;
+    left: 60%;
+    transform: translate(-50% -50%);
+    width: 400px;
+    height: 260px;
+}
+
+.description3 {
+    opacity: 0.7;
+    /*透明度を設定*/
+    box-sizing: border-box;
+    color: #fff;
+    background: #000;
+    width: 400px;
+    height: 64px;
+    padding: 1em;
+    position: absolute;
+    top: 115px;
+    left: 240px;
+    bottom: 1px;
+    text-align: center;
+    font-size: 16px;
+}
+
+
+.mezasipicbox {
+    display: flex;
+}
+
+.NNNEWS {
+    height: auto;
+}
+
+.NNEWS {
+    text-align: center;
+    font-family: 'Creepster', cursive;
+    font-size: 40px;
+    color: rgb(245, 126, 29);
+    background-color: #fbc99a;
+    margin: 40px 0;
+    padding: 15px 0;
+    border: 8px double orange;
+}
+
+.NEWSin {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.NEWSBOX {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+
+/* TOPICBOX1ここから */
+.topicbox1 {
+    width: 300px;
+    margin-right: 25px;
+    margin-left: 25px;
+    box-shadow: 0 0 0 0 bisque(1, 1, 1, 1);
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.topicbox1:hover {
+    box-shadow: 0 3px 6px 0 bisque(1, 1, 1, 1);
+    transform: translateY(-0.2em);
+}
+
+.dino1 {
+    width: 300px;
+}
+
+.NEWStxt1 {
+    font-size: 15px;
+    font-family: 'Noto Serif JP', sans-serif;
+}
+
+.NEWShiduke1 {
+    margin: 20px 0 18px;
+}
+
+.NEWSbun11 {
+    margin-bottom: 10px;
+}
+
+.NEWSbun12 {
+    margin-bottom: 10px;
+}
+
+.NEWSbun13 {
+    margin-bottom: 10px;
+}
+
+.topicbox2 {
+    width: 300px;
+    margin-right: 25px;
+    box-shadow: 0 0 0 0 bisque(1, 1, 1, 1);
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.topicbox2:hover {
+    box-shadow: 0 3px 6px 0 bisque(1, 1, 1, 1);
+    transform: translateY(-0.2em);
+}
+
+.dino2 {
+    width: 300px;
+}
+
+.NEWStxt2 {
+    font-size: 15px;
+    font-family: 'Noto Serif JP', sans-serif;
+    ;
+}
+
+.NEWShiduke2 {
+    margin: 20px 0 18px;
+}
+
+.NEWSbun21 {
+    margin-bottom: 10px;
+}
+
+.NEWSbun22 {
+    margin-bottom: 10px;
+}
+
+.NEWSbun23 {
+    margin-bottom: 10px;
+}
+
+.topicbox3 {
+    width: 300px;
+    margin-right: 25px;
+    box-shadow: 0 0 0 0 bisque(1, 1, 1, 1);
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.topicbox3:hover {
+    box-shadow: 0 3px 6px 0 bisque(1, 1, 1, 1);
+    transform: translateY(-0.2em);
+}
+
+.dino3 {
+    width: 300px;
+}
+
+.NEWStxt3 {
+    font-size: 15px;
+    font-family: 'Noto Serif JP', sans-serif;
+}
+
+.NEWShiduke3 {
+    margin: 20px 0 18px;
+}
+
+.NEWSbun31 {
+    margin-bottom: 10px;
+}
+
+.NEWSbun32 {
+    margin-bottom: 10px;
+}
+
+.NEWSbun33 {
+    margin-bottom: 10px;
+}
+
+.morebox {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto 60px;
+    width: 300px;
+    height: 60px;
+    background-color: #fbc99a;
+    border: 8px double orange;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.morebox:hover {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+    transform: translateY(-0.2em);
+}
+
+.more {
+    font-family: 'Creepster', cursive;
+    font-size: 40px;
+    color: rgb(245, 126, 29);
+    margin: auto;
+}
+
+/* MOREBOX終わり */
+
+
+.AACCESS {
+    text-align: center;
+    font-family: 'Creepster', cursive;
+    font-size: 40px;
+    color: rgb(245, 126, 29);
+    background-color: #fbc99a;
+    margin: 40px 0;
+    padding: 15px 0;
+    border: 8px double orange;
+}
+
+/* ACCESSはじめ */
+.access {
+    width: 100%;
+    height: auto;
+    background-color: #fbc99a;
+    ;
+    padding: 60px 0 60px;
+}
+
+
+.unnei {
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Noto Serif JP', sans-serif;
+    margin: 60px 0 60px;
+}
+
+/* 地図はじめ */
+.gmap {
+    height: 100%;
+    width: 100%;
+}
+
+.map {
+    width: 100%;
+}
+
+/* 地図終わり */
+/* テーブルはじめ */
+.table1 {
+    font-size: 18px;
+    font-family: 'Noto Serif JP', sans-serif;
+    width: 100%;
+    border: 0px;
+    line-height: 30px;
+    margin-top: 40px;
+    padding-left: 450px;
+    padding-bottom: 30px;
+}
+
+.table1 th {
+    text-align: left;
+    width: 20%;
+    padding-bottom: 30px;
+}
+
+.table1 td {
+    width: 80%;
+    padding-left: 70px;
+    padding-bottom: 30px;
+}
+
+/* テーブル終わり */
+
+.conta {
+    text-align: center;
+}
+
+.cont {
+    font-size: 24px;
+    margin: 60px 0 30px;
+    font-family: 'Creepster', cursive;
+    font-size: 40px;
+    color: rgb(245, 126, 29);
+    background-color: #fbc99a;
+    margin: 40px 0;
+    padding: 15px 0;
+    border: 8px double orange;
+
+}
+
+.setsu {
+    font-size: 18px;
+    font-family: 'Noto Serif JP', sans-serif;
+    margin: 0 0 60px;
+}
+
+.zehi {
+    font-size: 18px;
+    font-family: 'Noto Serif JP', sans-serif;
+    margin: 0 0 10px;
+}
+
+.sonota {
+    font-size: 18px;
+    font-family: 'Noto Serif JP', sans-serif;
+    margin: 0 0 30px;
+}
+
+.kome {
+    font-size: 18px;
+    font-family: 'Noto Serif JP', sans-serif;
+    margin: 0 0 10px;
+}
+
+.machi {
+    font-size: 18px;
+    font-family: 'Noto Serif JP', sans-serif;
+    margin: 0 0 70px;
+}
+
+/* コンタクト文章終わり */
+.contactlist {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}
+
+
+/* チェックボックスデザイン */
+.contactlist table {
+    border-collapse: collapse;
+    width: 640px;
+    margin-bottom: 30px;
+
+}
+
+.contactlist th {
+    padding: 0 64px 8px 16px;
+    height: 16px;
+    width: 240px;
+    font-size: 14px;
+    font-family: 'Noto Serif JP', sans-serif;
+    text-align: left;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.contactlist td {
+    padding: 8px 8px;
+    width: 400px;
+    text-align: left;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.tt {
+    width: 328px;
+    height: 36px;
+    border-bottom: 1px solid #bfbfbf
+}
+
+.ttt {
+    width: 328px;
+    height: 36px;
+    border-bottom: 1px solid #bfbfbf
+}
+
+.tttt {
+    width: 328px;
+    height: 36px;
+    border-bottom: 1px solid #bfbfbf
+}
+
+.kikkake {
+    width: 328px;
+    height: 36px;
+    border-bottom: 1px solid #bfbfbf
+}
+
+.senntaku {
+    width: 400px;
+}
+
+.senntaku div {
+    padding-bottom: 24px;
+
+}
+
+.senntaku label {
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.sai {
+    width: 328px;
+    height: 150px;
+    border-bottom: 1px solid #bfbfbf
+}
+
+/* コンタクト終わり */
+
+.soushinbox {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto 60px;
+    width: 300px;
+    height: 60px;
+    background-color: #fbc99a;
+    border: 8px double orange;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.soushinbox:hover {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+    transform: translateY(-0.2em);
+}
+
+.soushin {
+    font-family: 'Creepster', cursive;
+    font-size: 40px;
+    color: rgb(245, 126, 29);
+    margin: auto;
+}
+
+.slide {
+    display: flex;
+    height: auto;
+    width: 1280px;
+}
+
+.fade-in {
+    overflow: hidden;
+}
+
+.fade-in img {
+    opacity: 0;
+    /* 画像を最初は非表示にする */
+    transition: opacity 2.0s;
+    /* フェードインのアニメーションを追加 */
+}
+
+.footer {
+    display: flex;
+    background-color: rgb(245, 126, 29);
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: white;
+}
